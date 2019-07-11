@@ -1,0 +1,20 @@
+.panel{
+    height: 100vh;
+    display: flex;
+ }
+ .panel-main{
+    flex:5;
+ }
+
+.panel-aside{
+  flex:5;
+  display: flex;
+  &-shrink{
+    flex:0.8;
+  }
+
+  &-main{
+    flex:5.2;
+  }
+}
+ 

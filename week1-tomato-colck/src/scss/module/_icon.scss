@@ -1,0 +1,11 @@
+.icon{
+    cursor: pointer;
+    max-width: 80px;
+    &-svg{
+      fill:#efefef;
+    }
+    .active{
+      fill:$red;
+    }
+   } 
+  

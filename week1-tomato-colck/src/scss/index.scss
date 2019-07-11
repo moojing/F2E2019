@@ -1,4 +1,12 @@
 
  @import 'custom_variables';
  @import '~bootstrap/scss/bootstrap.scss';
- @import "base.scss";
+ 
+ @import 'base.scss';
+ @import './module/panel';
+ @import './module/icon';
+
+ .bg-gray{
+    background-color:$background-gray;
+ } 
+
