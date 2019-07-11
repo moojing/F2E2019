@@ -1,11 +1,13 @@
 import React from 'react';
 
-import './scss/App.scss';
-
 function App() {
   return (
     <div className="App">
-      
+       <div className="container"> 
+        <div className="row"> 
+          <div className="col-12"> asda</div>
+        </div>
+       </div>
     </div>
   );
 }
