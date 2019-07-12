@@ -4,17 +4,41 @@
  }
  .panel-main{
     flex:5;
+    position: relative;
+    .logo{
+        position: absolute; 
+        bottom:5rem; 
+        left: 50%; 
+        transform:translateX(-50%);
+        font-size: 0.6rem;
+        font-weight: 300;
+        letter-spacing: 1.5px;
+    }
+    .icon-tomato{
+        position: relative; 
+        .icon-title{
+            position: absolute; 
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%,-50%);
+            font-weight: 200;
+        }
+    }
+    
  }
 
 .panel-aside{
   flex:5;
   display: flex;
+  
   &-shrink{
-    flex:0.8;
+    flex:0.6;
+
+    border-right:1px darken(#efefef, 50%) solid;
   }
 
   &-main{
-    flex:5.2;
+    flex:5.4;
   }
 }
  

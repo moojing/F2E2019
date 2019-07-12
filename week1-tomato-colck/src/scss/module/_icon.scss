@@ -1,11 +1,16 @@
 .icon{
     cursor: pointer;
-    max-width: 80px;
+    
     &-svg{
       fill:#efefef;
+      transition:fill 0.3s;
+      &:hover{
+        fill: lighten($red, 15%)
+      }
     }
     .active{
       fill:$red;
     }
+  
    } 
   
