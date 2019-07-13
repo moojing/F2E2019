@@ -1,8 +1,9 @@
 import React ,{ useState } from 'react';
 import Icon from '../component/Icon'
+import SidebarToggler from '../component/SidebarToggler'
 
-const PanelAside = ()=>{
-    const icons = ['add','list','analysis','ring']
+function PanelAside (){
+    const icons = ['Add','List','Analysis','Ring']
     const [currentIcon,setCurrentIcon] = useState(icons[1])
     console.log('currentIcon: ', currentIcon);
     
@@ -18,14 +19,14 @@ const PanelAside = ()=>{
               className="icon" 
               key={index}
               onClick={()=>{setCurrentIcon(iconName)}}>
-                
+
              <Icon 
               name={iconName}
               className={`icon-svg ${isActive(iconName)?'active':''}`}/>
            </div>
           ))
           }
-           
+          <SidebarToggler/>
         </div>
 
         <div className=" panel-aside-main bg-dark text-white"> asda</div>
