@@ -1,10 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import Icon from '../component/Icon'
+import {ToggleContext } from '../context/ToggleContext' 
 
 const SidebarToggler = ()=>{
-
+    let {sayHi} = useContext(ToggleContext)
+    let toggleSidebar = ()=>{
+      sayHi()
+    }
     return (
-        <div className="toggler">
+        <div className="toggler" onClick={()=>{toggleSidebar()}}>
             
             <Icon 
               name="TomatoSmall"

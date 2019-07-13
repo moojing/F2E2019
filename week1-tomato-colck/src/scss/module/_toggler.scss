@@ -5,11 +5,12 @@
     left: 50%; 
     z-index: 100; 
     transform: translate(-50%);
-    
+    min-width: 6rem;
+    cursor: pointer;
     border-radius: 100px 20px 20px 100px;
     background-color: #fff;
     box-shadow: 15px 8px 12px 4px rgba(0,0,0,.2);
-    min-width: 6rem;
+    
     svg{
         display: inline-block;
     }

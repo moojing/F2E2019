@@ -3,7 +3,7 @@
     display: flex;
  }
  .panel-main{
-    flex:5;
+    width: 45%;
     position: relative;
     .logo{
         position: absolute; 
@@ -28,17 +28,23 @@
  }
 
 .panel-aside{
-  flex:5;
-  display: flex;
+  width: 55%;
+  
+  position: relative;
   
   &-shrink{
-    flex:0.6;
-
+    width:8%;
+    height: 100vh;
+    display: inline-block;
+    vertical-align: middle;
     border-right:1px darken(#efefef, 50%) solid;
   }
 
   &-main{
-    flex:5.4;
+    width: 92%;
+    height: 100vh;
+    display: inline-block;
+    vertical-align: middle;
   }
 }
  
