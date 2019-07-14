@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 import PanelAside from './component/PanelAside'
 import {ToggleContext} from './context/ToggleContext'
 import Cover from './component/Cover'
-
+import CustomBrowserRouter from './component/CustomBrowserRouter'
 function App() {
   const [panelShrink,setPanelShrink] = useState(false)
   let toggleContext = {
@@ -10,6 +10,7 @@ function App() {
     setPanelShrink
   }
   return (
+    <CustomBrowserRouter>
     <ToggleContext.Provider  value={toggleContext}>
     <div className="App">
        <div className="container-fluid"> 
@@ -28,6 +29,7 @@ function App() {
        </div>
     </div>
     </ToggleContext.Provider>
+    </CustomBrowserRouter>
   );
 }
 

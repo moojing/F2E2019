@@ -1,12 +1,21 @@
-import React ,{ useState } from 'react';
+import React ,{ useState,useEffect } from 'react';
+import { Route, Link } from "react-router-dom";
 import Icon from '../component/Icon'
 import SidebarToggler from '../component/SidebarToggler'
-
+import useRouter from '../hook/useRouter'
+import AddTask from '../page/AddTask'
+import TaskList from '../page/TaskList'
+import AnalysisReport from '../page/AnalysisReport' 
+import Ring from '../page/Ring' 
 
 function PanelAside (){
-    const icons = ['Add','List','Analysis','Ring']
-    const [currentIcon,setCurrentIcon] = useState(icons[1])
-  
+    const routeIcons = ['Add','List','Analysis','Ring']
+    const {location} = useRouter()
+    const [currentIcon,setCurrentIcon] = useState(location.pathname.slice(1))
+    
+    useEffect(()=>{
+      setCurrentIcon(location.pathname.slice(1))
+    },[location.pathname])
     
     const isActive = (icon)=>{
         return  icon === currentIcon
@@ -15,22 +24,32 @@ function PanelAside (){
     return ( 
       <>
         <div className="panel-aside-tools bg-dark"> 
-          { icons.map((iconName,index)=>(
-             <div 
-              className="icon" 
-              key={index}
-              onClick={()=>{setCurrentIcon(iconName)}}>
+          { routeIcons.map((iconName,index)=>(
+             <Link to={iconName} key={index}>
+                <div 
+                  className="icon" 
+                  onClick={()=>{setCurrentIcon(iconName)}}>
 
-             <Icon 
-              name={iconName}
-              className={`icon-svg ${isActive(iconName)?'active':''}`}/>
-           </div>
+                <Icon 
+                  name={iconName}
+                  className={`icon-svg ${isActive(iconName)?'active':''}`}/>
+              </div>
+             </Link>
           ))
           }
           <SidebarToggler/>
         </div>
 
-        <div className=" panel-aside-main bg-dark text-white"> asda</div>
+        <div className=" panel-aside-main bg-dark text-white"> 
+          
+            <Route path="/" exact component={AddTask} />
+            <Route path="/add"  component={AddTask} />
+            <Route path="/list"  component={TaskList} />
+            <Route path="/analysis"  component={AnalysisReport} />
+            <Route path="/ring"  component={Ring} />
+          
+          
+        </div>
       </>
     )   
 }
