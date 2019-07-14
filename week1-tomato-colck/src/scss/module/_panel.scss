@@ -5,6 +5,10 @@
  .panel-main{
     width: 45%;
     position: relative;
+    transition: width 0.3s;
+    &-expand{
+      width: 96%;
+    }
     .logo{
         position: absolute; 
         bottom:5rem; 
@@ -29,10 +33,13 @@
 
 .panel-aside{
   width: 55%;
-  
-  position: relative;
-  
+  position: absolute;
+  right: 0;
+  transition: right 0.3s;
   &-shrink{
+    right: -51%;
+  }
+  &-tools{
     width:8%;
     height: 100vh;
     display: inline-block;
@@ -46,5 +53,6 @@
     display: inline-block;
     vertical-align: middle;
   }
+  
 }
  

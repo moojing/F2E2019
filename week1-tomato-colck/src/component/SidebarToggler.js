@@ -3,12 +3,11 @@ import Icon from '../component/Icon'
 import {ToggleContext } from '../context/ToggleContext' 
 
 const SidebarToggler = ()=>{
-    let {sayHi} = useContext(ToggleContext)
-    let toggleSidebar = ()=>{
-      sayHi()
-    }
+    let {panelShrink,setPanelShrink} = useContext(ToggleContext)
+   
     return (
-        <div className="toggler" onClick={()=>{toggleSidebar()}}>
+        <div className={`toggler ${panelShrink?'toggler-shrink':''}`} 
+             onClick={()=>{setPanelShrink(prev=>!prev)}}>
             
             <Icon 
               name="TomatoSmall"
@@ -17,6 +16,7 @@ const SidebarToggler = ()=>{
             <Icon 
               name="Arrow"
               className="icon-svg icon-arrow"/>
+
         </div>
     )
 }
