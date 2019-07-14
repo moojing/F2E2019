@@ -6,3 +6,23 @@
 .ls-15{
     letter-spacing: 1.5px;
 }
+.title{
+    letter-spacing: 1px;
+    // margin:1rem 35px;
+    // padding-left:0.3rem;
+}
+.title-main{
+    // padding:1rem 0.3rem;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 1px #707070 solid;
+}
+
+.title-sub{
+    font-size: 14px;
+    color:#ACACAC;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
