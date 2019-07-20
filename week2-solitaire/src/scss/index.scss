@@ -1,0 +1,14 @@
+
+@import 'custom_variables';
+@import '~bootstrap/scss/bootstrap.scss';
+@import 'base.scss';
+
+@import './module/util.scss';
+@import './module/card.scss';
+
+
+
+.bg-gray{
+    background-color:$background-gray;
+} 
+

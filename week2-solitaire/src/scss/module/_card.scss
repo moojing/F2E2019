@@ -1,0 +1,23 @@
+.card{
+    &-poker{
+        padding: 2rem;
+        width: 11rem;
+        height: 14rem;
+        cursor: pointer;
+    }
+} 
+
+.patern{
+    position: relative; 
+    
+    &-left-top{
+        position: absolute; 
+        left: 1.2rem;
+        top: 0.8rem;
+    }
+    &-right-bottom{
+        position: absolute; 
+        right: 1.2rem;
+        bottom: 0.8rem;
+    }
+ }
