@@ -6,7 +6,7 @@ let Nav = ()=>{
         <div>
             
             <nav className="navbar navbar-dark bg-dark px-5">
-                <a className="navbar-brand" href="#">FREECELL</a>
+                <a className="navbar-brand" href="/">FREECELL</a>
             </nav>
 
         </div>

@@ -3,10 +3,11 @@ import {IndexContext} from '../hooks/context'
 let Poker = ({cardIndex:pokerIndex})=>{
     let {pokerRef} = useContext(IndexContext)
     function dragStart(e){
-
+        let parent = e.target.parentElement
        pokerRef.current = {
-        pokerIndex, 
-           originWrapperIndex:e.target.parentElement.getAttribute('data-index') 
+            pokerIndex, 
+            originWrapperIndex: parent.getAttribute('data-index'),
+            originWrapperGroup: parent.parentElement.getAttribute('data-group')
        }
     } 
     return(

@@ -7,7 +7,9 @@ import PokerWrapper from '../component/PokerWrapper'
 let WrapperGroup = ({groupName})=>{
         let {   tempCell,
                 mainCell} = useContext(IndexContext)
+        
         let cellGroup = {tempCell,mainCell} 
+
         function getGroup(){
            return cellGroup[groupName]
         } 

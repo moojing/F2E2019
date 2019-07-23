@@ -1,10 +1,10 @@
-import React,{useState,useRef,useEffect} from 'react'
+import React,{useState,useRef} from 'react'
 import Nav from '../component/Nav'
 import WrapperGroup from '../component/WrapperGroup'
 import {IndexContext} from '../hooks/context'
 let Index = ()=>{
     let [tempCell,setTempCell] = useState(Object.seal([3,null,null,null])) 
-    let [mainCell,setMainCell] = useState(Object.seal(new Array(4)) )
+    let [mainCell,setMainCell] = useState(Object.seal([null,12,null,null]))
     let pokerRef = useRef()
     
     let defaultContext={
@@ -19,7 +19,7 @@ let Index = ()=>{
         tempArr[index]= null
         return [...tempArr]
     }
-    
+
     function setCellWithGroupName(groupName){
         let setter 
         if(groupName === 'tempCell'){
@@ -31,17 +31,25 @@ let Index = ()=>{
     }
 
     const drop = (e)=>{
-        let pokerWrapperIndex =e.target.getAttribute('data-index') 
+        let newWrapperIndex =e.target.getAttribute('data-index') 
         let {originWrapperIndex} = pokerRef.current
+        let {originWrapperGroup} = pokerRef.current
+        let newWrapperGroup =e.target.parentElement.getAttribute('data-group')
+        // let newWrapperGroup =e.target.parentElement.getAttribute('data-group')
         let {pokerIndex} = pokerRef.current
-        let PokerGroup =e.target.parentElement.getAttribute('data-group')
-        let setter = setCellWithGroupName('tempCell') 
-        setter(prev=>{
+        
+        console.log('newWrapperGroup: ', newWrapperGroup);
+        let newSetter = setCellWithGroupName(newWrapperGroup) 
+        let originSetter = setCellWithGroupName(originWrapperGroup) 
+        originSetter(prev=>{
             let newArr = pokerRemover(prev,originWrapperIndex) 
-            newArr[pokerWrapperIndex] = pokerIndex
-            return newArr
+            return newArr 
         }) 
-        console.log('PokerGroup: ', PokerGroup);
+        newSetter(prev=>{
+            prev[newWrapperIndex] = pokerIndex
+            return [...prev]
+        })
+        
     }
     return (
         <IndexContext.Provider value={defaultContext}>
@@ -49,15 +57,17 @@ let Index = ()=>{
                 <Nav/>
             </div>
             <div className="container-fluid  "> 
-                
-                <div className="row"> 
-                    <div className="col-6"  onDrop={drop}>
+                <div className="row">
+                    <div className="col-12">
                         <h1>FREECELL</h1>
-                       <WrapperGroup groupName="tempCell"/>
-                        
                     </div>
-                    <div className="col-6">
-                        
+                </div>
+                <div className="row"> 
+                    <div className="offset-1 col-5"  onDrop={drop}>
+                       <WrapperGroup groupName="tempCell"/>
+                    </div>
+                    <div className="col-6" onDrop={drop}>
+                        <WrapperGroup groupName="mainCell"/>
                     </div>
                 </div>
             </div>
