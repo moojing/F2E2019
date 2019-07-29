@@ -18,8 +18,8 @@ let Index = ()=>{
         pokerRef
     } 
     
-    function pokerRemover(tempArr,index){
-        tempArr[index]= null
+    function pokerIndexModifier(tempArr,index,value){
+        tempArr[index]= value
         return [...tempArr]
     }
     function getCellGroupByName(name){
@@ -31,32 +31,31 @@ let Index = ()=>{
         return cellGroups[name]
     }
     function setCellGroupByName(groupName,setterFunc){
-        let setter 
-        if(groupName === 'tempCell'){
-            setter = setTempCell
-        }else if(groupName==='mainCell') {
-            setter = setMainCell
-        }else{
-            return 
+        if (groupName === 'tempCell') {
+            setTempCell(setterFunc)
+        } else if (groupName === 'mainCell') {
+            setMainCell(setterFunc)
+        } else if (groupName === 'gameCell') {
+            setGameCell(setterFunc)
         }
-        
-        setter(setterFunc)
     }
 
-    const drop = (e)=>{
+    const onDrop = (e)=>{
         
-        let newWrapperIndex = e.target.getAttribute('data-index') 
-        let newWrapperGroup = e.target.parentElement.getAttribute('data-group')
+        
+       
+        let newWrapperIndex =e.target.getAttribute('data-index') 
+        let newWrapperGroup =e.target.parentElement.getAttribute('data-group')
+        console.log('newWrapperGroup: ', newWrapperGroup);
         let {originWrapperIndex} = pokerRef.current
         let {originWrapperGroup} = pokerRef.current
-        let newGroup = getCellGroupByName(newWrapperGroup) 
-        
-        // let originGroup = getCellGroupByName(originWrapperGroup) 
         let {pokerIndex} = pokerRef.current
+        // let newGroup = getCellGroupByName(newWrapperGroup) 
+        // let originGroup = getCellGroupByName(originWrapperGroup) 
         
-      if(newWrapperGroup !== 'gameCell' && newWrapperGroup ){
+      if(newWrapperGroup && newWrapperGroup!=='gameCell'  ){
         setCellGroupByName(originWrapperGroup,prev=>{
-            let newArr = pokerRemover(prev,originWrapperIndex) 
+            let newArr = pokerIndexModifier(prev,originWrapperIndex,null) 
             return newArr 
         }) 
 
@@ -64,8 +63,24 @@ let Index = ()=>{
             prev[newWrapperIndex] = pokerIndex
             return [...prev]
         }) 
-      }else{
-          return 
+      }else if(newWrapperGroup && newWrapperGroup==='gameCell'){
+        setCellGroupByName(originWrapperGroup,prev=>{
+            let newArr = pokerIndexModifier(prev,originWrapperIndex,[]) 
+            return newArr 
+        }) 
+        
+        setCellGroupByName(newWrapperGroup,prev=>{
+            
+            let WrapperIndexArray = prev[newWrapperIndex] || []
+            console.log('newWrapperIndex: ', newWrapperIndex);
+            console.log('WrapperIndexArray: ', WrapperIndexArray);
+            WrapperIndexArray.push(pokerIndex) 
+            prev[newWrapperIndex] = WrapperIndexArray
+            console.log('prev: ', prev);
+            
+
+            return [...prev]
+        }) 
       } 
         
     }
@@ -81,16 +96,16 @@ let Index = ()=>{
                     </div>
                 </div>
                 <div className="row"> 
-                    <div className="offset-1 col-5 text-center"  onDrop={drop}>
+                    <div className="offset-1 col-5 text-center"  onDrop={onDrop}>
                        <WrapperGroup groupName="tempCell"/>
                     </div>
-                    <div className="col-6" onDrop={drop}>
+                    <div className="col-6" onDrop={onDrop}>
                         <WrapperGroup groupName="mainCell"/>
                     </div>
                 </div>
                 <div className="row my-4"> 
-                    <div className="offset-1 col-10 text-center"> 
-                        <WrapperGroup groupName="gameCell"/>
+                    <div className="offset-1 col-10 text-center" onDrop={onDrop}> 
+                        <WrapperGroup groupName="gameCell" />
                     </div>
                 </div>
             </div>

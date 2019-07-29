@@ -6,23 +6,34 @@ import PokerWrapper from '../component/PokerWrapper'
 
 let WrapperGroup = ({groupName})=>{
         let {   tempCell,
-                mainCell} = useContext(IndexContext)
+                mainCell,
+                gameCell} = useContext(IndexContext)
         
-        let cellGroup = {tempCell,mainCell} 
+        let cellGroup = {
+                tempCell,
+                mainCell,
+                gameCell
+            } 
 
         function getGroup(){
            return cellGroup[groupName]
         } 
+
+        function isArray(item){
+            return Array.isArray(item)
+        } 
+
     return (
         <div className="wrapper-group" data-group={groupName}>
         {getGroup().map((cell,index)=>{
                            return (
                                <React.Fragment key={index}>
                                <PokerWrapper 
-                                   wrapperIndex={index} 
-                                   >
+                                   wrapperIndex={index} >
+                                       
                                    {   
-                                       cell?
+                                       (isArray(cell) && cell.length>0)
+                                       ||( !isArray(cell) && cell!==null )?
                                        <Poker cardIndex={cell}/>:
                                        null
                                    }

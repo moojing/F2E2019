@@ -1,37 +1,35 @@
 $container-width:map-get($grid-breakpoints, "lg");
 $card-width:$container-width / 8;
-$card-height:$card-width *1.5 ;
-
-.card{
+$card-height:$card-width *1.5;
+.card {
     display: inline-block;
-    
-    &-poker{
+    &-poker {
         padding: 2rem;
         width: $card-width;
         height: $card-height;
         background-color: #fff;
+        border: none;
         cursor: pointer;
     }
-    &-box{
+    &-box {
         margin: .2rem;
         width: calc( #{$card-width} + 2px);
         height: calc(#{$card-height} + 2px);
-        overflow: hidden;
+        overflow: overlay;
         background-color: transparent;
-    } 
-} 
+    }
+}
 
-.patern{
-    position: relative; 
-    
-    &-left-top{
-        position: absolute; 
+.patern {
+    position: relative;
+    &-left-top {
+        position: absolute;
         left: 1.2rem;
         top: 0.8rem;
     }
-    &-right-bottom{
-        position: absolute; 
+    &-right-bottom {
+        position: absolute;
         right: 1.2rem;
         bottom: 0.8rem;
     }
- }
+}
