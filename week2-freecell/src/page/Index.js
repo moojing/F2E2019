@@ -18,7 +18,7 @@ let Index = ()=>{
         pokerRef
     } 
     
-    function pokerIndexModifier(tempArr,index,value){
+    function arrayIndexReplacer(tempArr,index,value){
         tempArr[index]= value
         return [...tempArr]
     }
@@ -55,23 +55,35 @@ let Index = ()=>{
         
       if(newWrapperGroup && newWrapperGroup!=='gameCell'  ){
         setCellGroupByName(originWrapperGroup,prev=>{
-            let newArr = pokerIndexModifier(prev,originWrapperIndex,null) 
-            return newArr 
+            let elementToReplace
+            if(typeof prev[originWrapperIndex] === 'array'){
+                let {length} = prev[originWrapperIndex]
+                elementToReplace = prev[originWrapperIndex].splice(0,length-2)
+            }else{
+                elementToReplace = null 
+            } 
+            return arrayIndexReplacer(prev,originWrapperIndex,elementToReplace)     
         }) 
 
         setCellGroupByName(newWrapperGroup,prev=>{
-            prev[newWrapperIndex] = pokerIndex
-            return [...prev]
+            return arrayIndexReplacer(prev,newWrapperIndex,pokerIndex)   
         }) 
       }else if(newWrapperGroup && newWrapperGroup==='gameCell'){
         setCellGroupByName(originWrapperGroup,prev=>{
-            let newArr = pokerIndexModifier(prev,originWrapperIndex,[]) 
-            return newArr 
+            let elementToReplace
+            if(typeof prev[originWrapperIndex] === 'array'){
+                let {length} = prev[originWrapperIndex]
+                elementToReplace = prev[originWrapperIndex].splice(0,length-2)
+            }else{
+                elementToReplace = null 
+            }
+            
+            return arrayIndexReplacer(prev,originWrapperIndex,elementToReplace)
         }) 
         
         setCellGroupByName(newWrapperGroup,prev=>{
             
-            let WrapperIndexArray = prev[newWrapperIndex] || []
+            let WrapperIndexArray = prev[newWrapperIndex]  
             console.log('newWrapperIndex: ', newWrapperIndex);
             console.log('WrapperIndexArray: ', WrapperIndexArray);
             WrapperIndexArray.push(pokerIndex) 
