@@ -2,10 +2,11 @@ import React,{useState,useRef} from 'react'
 import Nav from '../component/Nav'
 import WrapperGroup from '../component/WrapperGroup'
 import {IndexContext} from '../hooks/context'
+import { isArray } from 'util';
 let Index = ()=>{
     let [tempCell,setTempCell] = useState(Object.seal([3,null,null,null])) 
     let [mainCell,setMainCell] = useState(Object.seal([null,12,null,null]))
-    let [gameCell,setGameCell] = useState(Object.seal([[],[],[],[],[],[],[],[]]))
+    let [gameCell,setGameCell] = useState(Object.seal([[1,2,3,12],[],[],[],[],[],[],[]]))
     let pokerRef = useRef()
     
     let defaultContext={
@@ -41,24 +42,26 @@ let Index = ()=>{
     }
 
     const onDrop = (e)=>{
+        console.log('e: ', e.target);
         
         
        
-        let newWrapperIndex =e.target.getAttribute('data-index') 
-        let newWrapperGroup =e.target.parentElement.getAttribute('data-group')
+        let newWrapperIndex =e.target.getAttribute('data-index') ||e.target.parentElement.getAttribute('data-index')
+        let newWrapperGroup = e.target.parentElement.getAttribute('data-group') ||e.target.parentElement.parentElement.getAttribute('data-group')
         console.log('newWrapperGroup: ', newWrapperGroup);
         let {originWrapperIndex} = pokerRef.current
         let {originWrapperGroup} = pokerRef.current
         let {pokerIndex} = pokerRef.current
-        // let newGroup = getCellGroupByName(newWrapperGroup) 
+        let newGroup = getCellGroupByName(newWrapperGroup) 
         // let originGroup = getCellGroupByName(originWrapperGroup) 
         
       if(newWrapperGroup && newWrapperGroup!=='gameCell'  ){
+          if(newGroup[newWrapperIndex]) return  
         setCellGroupByName(originWrapperGroup,prev=>{
             let elementToReplace
-            if(typeof prev[originWrapperIndex] === 'array'){
+            if(isArray(prev[originWrapperIndex])){
                 let {length} = prev[originWrapperIndex]
-                elementToReplace = prev[originWrapperIndex].splice(0,length-2)
+                elementToReplace = prev[originWrapperIndex].splice(0,length-1)
             }else{
                 elementToReplace = null 
             } 
@@ -71,26 +74,27 @@ let Index = ()=>{
       }else if(newWrapperGroup && newWrapperGroup==='gameCell'){
         setCellGroupByName(originWrapperGroup,prev=>{
             let elementToReplace
-            if(typeof prev[originWrapperIndex] === 'array'){
+            if(isArray(prev[originWrapperIndex])){
                 let {length} = prev[originWrapperIndex]
-                elementToReplace = prev[originWrapperIndex].splice(0,length-2)
+                elementToReplace = prev[originWrapperIndex].splice(0,length-1)
             }else{
                 elementToReplace = null 
             }
-            
             return arrayIndexReplacer(prev,originWrapperIndex,elementToReplace)
         }) 
         
         setCellGroupByName(newWrapperGroup,prev=>{
             
             let WrapperIndexArray = prev[newWrapperIndex]  
+            console.log('prev: ', prev);
             console.log('newWrapperIndex: ', newWrapperIndex);
             console.log('WrapperIndexArray: ', WrapperIndexArray);
-            WrapperIndexArray.push(pokerIndex) 
-            prev[newWrapperIndex] = WrapperIndexArray
-            console.log('prev: ', prev);
             
-
+            WrapperIndexArray.push(pokerIndex) 
+            console.log('WrapperIndexArray: ', WrapperIndexArray);
+            prev[newWrapperIndex] = WrapperIndexArray
+            
+        
             return [...prev]
         }) 
       } 
