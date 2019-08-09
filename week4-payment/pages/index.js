@@ -1,91 +1,104 @@
-import React from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import {useState,useReducer} from 'react'
+// import Head from 'next/head';
+// import Router from 'next/router';
+import {PaymentFormReducer} from '../reducer' 
+import '../scss/index.scss'
+import PaymentCard from '../components/PaymentCard'
 
-const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-    </Head>
+let methods = [{
+  name: 'credit', 
+  texts:['信用卡','刷卡'],
+  img:'card-light.png'
+},
+{
+  name:'shop',
+  texts:['超商代碼','繳費'],
+  img:'shop-light.png'
+},
+{
+  name:'atm',
+  texts:['ATM','轉帳'],
+  img:'ATM-light.png'
 
-    <Nav />
+}]
+let paymentFormInit = {
+  method: '', 
+  data:{} 
+}
+function IndexPage() {
+  let [currentMethod,setCurrentMethod] = useState(methods[0].name)
+  let [paymentData, paymentDispatcher] = useReducer(PaymentFormReducer,paymentFormInit) 
+  let onMethodClick = (method)=>{
+    setCurrentMethod(method)
+    console.log('paymentData',paymentData)
+  }
+  return (
+    <div>
+      <div className="container"> 
+        <div className="row m-5"> 
+          <div className="col-8"> 
+            <div className="wrapper wrapper-payment "> 
+                <div className="wrapper-title"> 
+                  請選擇付款方式
+                </div>
+                <div className="wrapper-body">
+                    <ul className="tab tab-method">
+                    {
+                      methods.map((method,index)=>{
+                        return (
+                          <li className={`card card-method ${currentMethod===method.name ? 'active' : ''}` }
+                              onClick={()=>{onMethodClick(method)}}
+                              key={index}> 
+                            <div className="card-img">
+                              <img src={`/static/${method.img}`} alt=""/>
+                            </div>
+                            <div className="card-title"> 
+                              {
+                                method.texts.map((text,index)=>(<h6 key={index}>{text}</h6>)) 
+                              }
+                            </div>
+                        </li>
+                        ) 
+                      }) 
+                    }
+                    </ul>
+                    <div className="tab tab-method-page">
+                        <PaymentCard payment={currentMethod}/>
+                    </div>  
+                    <div className="btn btn-teal btn-block py-3 mt-4"> 
+                      確定付款 ($1500)
+                    </div>
+                </div>
+              
+            </div>
+            
+          </div>
+          <div className="col-4">
+            <div className="wrapper wrapper-order p-3"> 
+                <div className="wrapper-title"> 
+                  我的訂單
+                </div>
+                <ul className="wrapper-body flex-column">
+                  <li> 
+                     流浪金屬史萊姆鎧甲 x 1 
+                  </li>
+                  <li>
+                      抗魔戒指 x 1
+                  </li>
+                  <li>
+                      萬能藥 x 3 
+                  </li>
+                  <li>
+                      賢者藥水 x 1 
+                  </li>
 
-    <div className='hero'>
-      <h1 className='title'>Welcome to Next.js!</h1>
-      <p className='description'>
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className='row'>
-        <Link href='https://github.com/zeit/next.js#getting-started'>
-          <a className='card'>
-            <h3>Getting Started &rarr;</h3>
-            <p>Learn more about Next.js on GitHub and in their examples</p>
-          </a>
-        </Link>
-        <Link href='https://github.com/zeit/next.js/tree/master/examples'>
-          <a className='card'>
-            <h3>Examples &rarr;</h3>
-            <p>Find other example boilerplates on the Next.js GitHub</p>
-          </a>
-        </Link>
-        <Link href='https://github.com/zeit/next.js'>
-          <a className='card'>
-            <h3>Create Next App &rarr;</h3>
-            <p>Was this tool helpful? Let us know how we can improve it!</p>
-          </a>
-        </Link>
+                </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
-  </div>
-)
-
-export default Home
+      </div>
+  );
+}
+ 
+export default IndexPage;
