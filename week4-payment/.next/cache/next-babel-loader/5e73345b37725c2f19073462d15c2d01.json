@@ -1,1 +1,0 @@
-{"ast":null,"code":"export function PaymentFormReducer() {}","map":{"version":3,"sources":["/Users/mujing/Project/TimeRoom/week4-payment/reducer/index.js"],"names":["PaymentFormReducer"],"mappings":"AAAA,OAAO,SAASA,kBAAT,GAA6B,CAEnC","sourcesContent":["export function PaymentFormReducer(){\n\n}\n"]},"metadata":{},"sourceType":"module"}

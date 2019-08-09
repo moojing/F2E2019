@@ -395,6 +395,23 @@ var PaymentCard = function PaymentCard(_ref) {
 
 /***/ }),
 
+/***/ "./context/index.js":
+/*!**************************!*\
+  !*** ./context/index.js ***!
+  \**************************/
+/*! exports provided: PaymentContext */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymentContext", function() { return PaymentContext; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var PaymentContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
@@ -417,6 +434,50 @@ module.exports = __webpack_require__(/*! core-js/library/fn/get-iterator */ "cor
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/define-property */ "core-js/library/fn/object/define-property");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ "core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-symbols */ "core-js/library/fn/object/get-own-property-symbols");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/keys.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core-js/library/fn/object/keys");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithHoles.js":
 /*!***************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithHoles.js ***!
@@ -432,6 +493,36 @@ __webpack_require__.r(__webpack_exports__);
 
 function _arrayWithHoles(arr) {
   if (_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default()(arr)) return arr;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
 }
 
 /***/ }),
@@ -493,6 +584,49 @@ function _nonIterableRest() {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectSpread; });
+/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+
+
+
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    var ownKeys = _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default()(source);
+
+    if (typeof _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default.a === 'function') {
+      ownKeys = ownKeys.concat(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default()(source).filter(function (sym) {
+        return _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default()(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      Object(_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js ***!
@@ -528,14 +662,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducer */ "./reducer/index.js");
-/* harmony import */ var _scss_index_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scss/index.scss */ "./scss/index.scss");
-/* harmony import */ var _scss_index_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scss_index_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_PaymentCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/PaymentCard */ "./components/PaymentCard.js");
+/* harmony import */ var _context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context */ "./context/index.js");
+/* harmony import */ var _scss_index_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../scss/index.scss */ "./scss/index.scss");
+/* harmony import */ var _scss_index_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scss_index_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_PaymentCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/PaymentCard */ "./components/PaymentCard.js");
 
 var _jsxFileName = "/Users/mujing/Project/TimeRoom/week4-payment/pages/index.js";
 
- // import Head from 'next/head';
-// import Router from 'next/router';
+
 
 
 
@@ -571,81 +705,85 @@ function IndexPage() {
 
   var onMethodClick = function onMethodClick(method) {
     setCurrentMethod(method);
+    console.log('method: ', method);
     console.log('paymentData', paymentData);
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_context__WEBPACK_IMPORTED_MODULE_3__["PaymentContext"].Provider, {
+    value: {
+      paymentDispatcher: paymentDispatcher
     },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "container",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "row m-5",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 38
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "col-8",
+    className: "container",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "wrapper wrapper-payment ",
+    className: "row m-5",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "wrapper-title",
+    className: "col-8",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 41
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "wrapper wrapper-payment ",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "wrapper-title",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
     },
     __self: this
   }, "\u8ACB\u9078\u64C7\u4ED8\u6B3E\u65B9\u5F0F"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "wrapper-body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 46
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     className: "tab tab-method",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 47
     },
     __self: this
   }, methods.map(function (method, index) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
       className: "card card-method ".concat(currentMethod === method.name ? 'active' : ''),
       onClick: function onClick() {
-        onMethodClick(method);
+        onMethodClick(method.name);
       },
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 51
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "card-img",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 54
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -653,14 +791,14 @@ function IndexPage() {
       alt: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 55
       },
       __self: this
     })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "card-title",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 57
       },
       __self: this
     }, method.texts.map(function (text, index) {
@@ -668,7 +806,7 @@ function IndexPage() {
         key: index,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 59
         },
         __self: this
       }, text);
@@ -677,73 +815,73 @@ function IndexPage() {
     className: "tab tab-method-page",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 67
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_PaymentCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_PaymentCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
     payment: currentMethod,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 68
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "btn btn-teal btn-block py-3 mt-4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 70
     },
     __self: this
   }, "\u78BA\u5B9A\u4ED8\u6B3E ($1500)")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "col-4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 78
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "wrapper wrapper-order p-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 79
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "wrapper-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 80
     },
     __self: this
   }, "\u6211\u7684\u8A02\u55AE"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     className: "wrapper-body flex-column",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 83
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 84
     },
     __self: this
   }, "\b \u6D41\u6D6A\u91D1\u5C6C\u53F2\u840A\u59C6\u93A7\u7532 x 1"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 87
     },
     __self: this
   }, "\u6297\u9B54\u6212\u6307 x 1"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 90
     },
     __self: this
   }, "\u842C\u80FD\u85E5 x 3"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 93
     },
     __self: this
   }, "\u8CE2\u8005\u85E5\u6C34 x 1")))))));
@@ -763,7 +901,46 @@ function IndexPage() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymentFormReducer", function() { return PaymentFormReducer; });
-function PaymentFormReducer() {}
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+
+function PaymentFormReducer(state, action) {
+  if (state.method === action.method) {
+    return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+      data: action.data
+    });
+  }
+
+  switch (action.method) {
+    case 'credit':
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        data: defaultSchema.credit
+      });
+
+    case 'shop':
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        data: defaultSchema.shop
+      });
+
+    case 'atm':
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        data: defaultSchema.atm
+      });
+
+    default:
+      throw new Error('No action is provided.');
+  }
+}
+var defaultSchema = {
+  credit: {
+    email: '',
+    creditNumber: ['', '', '', ''],
+    expireMonth: '',
+    expireYear: '',
+    cvv: ''
+  },
+  shop: {},
+  atm: {}
+};
 
 /***/ }),
 
@@ -809,6 +986,50 @@ module.exports = require("core-js/library/fn/array/is-array");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/get-iterator");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/define-property":
+/*!************************************************************!*\
+  !*** external "core-js/library/fn/object/define-property" ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/define-property");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-descriptor":
+/*!************************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-descriptor" ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-symbols":
+/*!*********************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-symbols" ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-symbols");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/keys":
+/*!*************************************************!*\
+  !*** external "core-js/library/fn/object/keys" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/keys");
 
 /***/ }),
 

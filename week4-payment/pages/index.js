@@ -1,7 +1,7 @@
-import {useState,useReducer} from 'react'
-// import Head from 'next/head';
-// import Router from 'next/router';
+import react,{useState,useReducer,useContext} from 'react'
+ 
 import {PaymentFormReducer} from '../reducer' 
+import {PaymentContext} from '../context'
 import '../scss/index.scss'
 import PaymentCard from '../components/PaymentCard'
 
@@ -28,12 +28,14 @@ let paymentFormInit = {
 function IndexPage() {
   let [currentMethod,setCurrentMethod] = useState(methods[0].name)
   let [paymentData, paymentDispatcher] = useReducer(PaymentFormReducer,paymentFormInit) 
+
   let onMethodClick = (method)=>{
     setCurrentMethod(method)
+    console.log('method: ', method);
     console.log('paymentData',paymentData)
   }
   return (
-    <div>
+    <PaymentContext.Provider value={{paymentDispatcher}}>
       <div className="container"> 
         <div className="row m-5"> 
           <div className="col-8"> 
@@ -47,7 +49,7 @@ function IndexPage() {
                       methods.map((method,index)=>{
                         return (
                           <li className={`card card-method ${currentMethod===method.name ? 'active' : ''}` }
-                              onClick={()=>{onMethodClick(method)}}
+                              onClick={()=>{onMethodClick(method.name)}}
                               key={index}> 
                             <div className="card-img">
                               <img src={`/static/${method.img}`} alt=""/>
@@ -97,7 +99,7 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      </div>
+      </PaymentContext.Provider>
   );
 }
  
