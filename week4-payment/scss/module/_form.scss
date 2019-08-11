@@ -43,7 +43,11 @@
         }
     } 
 } 
-
+.form-cvv{
+    input:first-of-type{
+        max-width: 10rem;
+    }
+}
 .separater{
     margin:0 10px;
     color: rgba(197,197,197,.5);

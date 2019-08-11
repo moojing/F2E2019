@@ -14,11 +14,26 @@ input{
     width: 100%;
     border:none;
     border-bottom: 1px solid rgba(197,197,197,.5);
-    
     outline: none;
     color:$text-gray;
     letter-spacing: 1px;
     
 }
   
- 
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    // border:none;
+    -webkit-box-shadow: 0 0 0 1000px #1A2328 inset !important;
+}
+input:-webkit-autofill {
+    -webkit-text-fill-color: $text-gray !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

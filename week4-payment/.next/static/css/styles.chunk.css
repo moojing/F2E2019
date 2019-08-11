@@ -7257,6 +7257,20 @@ input {
   color: #C5C5C5;
   letter-spacing: 1px; }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #1A2328 inset !important; }
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #C5C5C5 !important; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
 .cursor-pointer {
   cursor: pointer; }
 
@@ -7370,6 +7384,9 @@ input {
   padding-left: 10px; }
   .form-expire input:first-of-type {
     max-width: 2.9rem; }
+
+.form-cvv input:first-of-type {
+  max-width: 10rem; }
 
 .separater {
   margin: 0 10px;

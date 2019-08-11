@@ -1,41 +1,33 @@
-import react,{useState,useReducer,useContext} from 'react'
+import react,{useState,useReducer,useEffect} from 'react'
  
 import {PaymentFormReducer} from '../reducer' 
 import {PaymentContext} from '../context'
+import {defaultSchema} from '../utils/formSchema'
+import {paymentMethods as methods} from '../utils/paymentMethods'
 import '../scss/index.scss'
 import PaymentCard from '../components/PaymentCard'
 
-let methods = [{
-  name: 'credit', 
-  texts:['信用卡','刷卡'],
-  img:'card-light.png'
-},
-{
-  name:'shop',
-  texts:['超商代碼','繳費'],
-  img:'shop-light.png'
-},
-{
-  name:'atm',
-  texts:['ATM','轉帳'],
-  img:'ATM-light.png'
-
-}]
 let paymentFormInit = {
   method: '', 
-  data:{} 
+  data:defaultSchema[methods[0].name]
 }
+
 function IndexPage() {
   let [currentMethod,setCurrentMethod] = useState(methods[0].name)
   let [paymentData, paymentDispatcher] = useReducer(PaymentFormReducer,paymentFormInit) 
+  
+  useEffect(()=>{
+    paymentDispatcher({method:currentMethod})
+  },[currentMethod])
 
   let onMethodClick = (method)=>{
     setCurrentMethod(method)
-    console.log('method: ', method);
-    console.log('paymentData',paymentData)
   }
   return (
-    <PaymentContext.Provider value={{paymentDispatcher}}>
+    <PaymentContext.Provider value={{
+      paymentDispatcher,
+      paymentData
+      }}>
       <div className="container"> 
         <div className="row m-5"> 
           <div className="col-8"> 
