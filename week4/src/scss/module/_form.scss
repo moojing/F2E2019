@@ -1,0 +1,60 @@
+
+ 
+    
+.form-credit,.form-expire{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom:1px solid rgba(197,197,197,.5);
+    padding-bottom:10px;
+    label{
+        width:100%;
+    }
+    input{
+        border:none;
+        padding: 0 10px;
+        max-width:3.5rem;
+        font-size: 14px;
+    } 
+}
+ .form-credit{
+     position: relative;
+     .visa{
+        padding:2px 5px;
+        letter-spacing: 1px;
+        border-radius:5px;
+        color:$teal-dark;
+        border:1px solid $teal-dark;
+        font-size: 12px;
+        position: absolute;
+        bottom: 15%;
+        right: -17%;
+        
+                
+     }
+ }
+.form-expire{
+    
+    input{
+        max-width:4rem;
+        padding: 0;
+        padding-left: 10px;
+        &:first-of-type{
+            max-width: 2.9rem;
+        }
+    } 
+} 
+.form-cvv{
+    input:first-of-type{
+        max-width: 10rem;
+    }
+}
+.separater{
+    margin:0 10px;
+    color: rgba(197,197,197,.5);
+    &-expire{
+        color:$text-gray;
+    }
+} 
+
+
+ 
