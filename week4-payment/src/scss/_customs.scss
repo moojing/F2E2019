@@ -55,6 +55,7 @@ $colors: map-merge(
     "yellow":     $yellow,
     "green":      $green,
     "teal":       $teal,
+    "teal-light": $teal-light,
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
@@ -86,6 +87,7 @@ $theme-colors: map-merge(
     "light":      $light,
     "dark":       $dark,
     "teal": $teal,
+    "teal-light": $teal-light,
     "red":  $red
   ),
   $theme-colors

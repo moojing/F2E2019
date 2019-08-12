@@ -34,3 +34,33 @@
     
 }
  
+
+.wrapper-order {
+    .wrapper-body{
+        li{
+            display: flex; 
+            justify-content: space-between;
+        }
+        li:last-of-type{
+            border-bottom: 1px $teal solid;
+            padding-bottom: 1.2rem;
+        }
+    }
+    .order-total{
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.price{
+    color:$teal-light;
+    &-single{
+        
+    }
+    &-total{
+        font-size: 1.4rem;
+    }
+    
+}
+

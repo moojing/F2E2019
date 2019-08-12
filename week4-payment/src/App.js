@@ -75,18 +75,26 @@ function App() {
                 <ul className="wrapper-body flex-column">
                   <li> 
                      流浪金屬史萊姆鎧甲 x 1 
+                    <span className="price price-single">1150</span>
                   </li>
                   <li>
                       抗魔戒指 x 1
+                      <span className="price price-single">100</span>
                   </li>
                   <li>
-                      萬能藥 x 3 
+                      萬能藥 x 3  
+                      <span className="price price-single">270</span>
                   </li>
                   <li>
                       賢者藥水 x 1 
+                      <span className="price price-single">130</span>
                   </li>
 
                 </ul>
+                <div className="order-total">
+                  <span className="text-teal pl-2"> TWD </span>
+                  <span className="pr-2 price price-total ">1500 </span>
+                </div>
             </div>
           </div>
         </div>
