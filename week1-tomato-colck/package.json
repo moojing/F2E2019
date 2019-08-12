@@ -2,7 +2,7 @@
   "name": "tomato-colck",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/F2E2019",
+  "homepage": "/F2E2019/week1",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "node-sass": "^4.12.0",

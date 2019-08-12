@@ -2,7 +2,7 @@
   "name": "week2-solitaire",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/F2E2019",
+  "homepage": "/F2E2019/week2",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "node-sass": "^4.12.0",
@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d week2-freecell/build/ -e week2"
+    "deploy": "gh-pages -d ./build/ -e week2"
   },
   "eslintConfig": {
     "extends": "react-app"
