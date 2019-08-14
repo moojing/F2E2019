@@ -1,6 +1,7 @@
 
  
     
+ 
 .form-credit,.form-expire{
     display: flex;
     flex-wrap: wrap;
@@ -48,6 +49,7 @@
         max-width: 10rem;
     }
 }
+ 
 .separater{
     margin:0 10px;
     color: rgba(197,197,197,.5);
@@ -57,4 +59,28 @@
 } 
 
 
- 
+ .form-check{
+    .form-check-label{
+        cursor: pointer;
+        &:before{ 
+            content:""; 
+            display: block; 
+            background-color: #212529;
+            border: 1px solid #fff;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0; 
+            top:50%;
+            transform: translateY(-50%);
+        }
+    } 
+    .form-check-input{
+        display: none;
+    }
+    
+    input:checked ~ .form-check-label:before{
+        background-color: #fff;
+    }
+ }

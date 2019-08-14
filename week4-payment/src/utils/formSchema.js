@@ -8,6 +8,13 @@ export let defaultSchema = {
         cvv:''
 
     },
-    shop:{}, 
-    atm:{} 
+    shop:{
+        email:'', 
+        name:'family' , //family / 7-11
+    }, 
+    atm:{
+        email:'',
+        bank:'esun' // esun / twbank / twnew
+        
+    } 
 }

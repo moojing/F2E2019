@@ -6,12 +6,20 @@ let PayByCredit = () =>{
     
     let  onFormChange   = (e)=>{
         let value = e.target.value
+      
         let name = e.target.name
         setCreditData(prev=>{
              let inputName = name.split('-')[0]
              let inputIndex = name.split('-')[1]
-
+              
+              
              if( Array.isArray(prev[inputName])   && inputIndex){
+                 if((parseInt(inputIndex)+1)<=3 &&  value.length===4 ){
+                     let nextCreditInput = document.querySelector(`input[name="${inputName+'-'+(parseInt(inputIndex)+1)}"]`)
+                     nextCreditInput.focus()
+                 }else{
+
+                 }
                 let newCredit = prev[inputName]
                 newCredit[inputIndex] = value
                 return {...prev , creditNumber:newCredit}
@@ -32,7 +40,7 @@ let PayByCredit = () =>{
                 <label> 信用卡卡號：</label>
                 <input type="text" 
                        name="creditNumber-0" 
-                       autocomplete="off"
+                       autoComplete="off"
                        maxLength="4"
                        onChange={onFormChange} />
 
@@ -40,20 +48,20 @@ let PayByCredit = () =>{
 
                 <input  type="text" 
                         name="creditNumber-1" 
-                        autocomplete="off"
+                        autoComplete="off"
                         maxLength="4" 
                         onChange={onFormChange}/>          
 
                 <span className="separater"> - </span>
                 <input  type="text" 
                         name="creditNumber-2" 
-                        autocomplete="off"
+                        autoComplete="off"
                         maxLength="4" 
                         onChange={onFormChange}/>   
                 <span className="separater"> - </span>
                 <input  type="text" 
                         name="creditNumber-3" 
-                        autocomplete="off"
+                        autoComplete="off"
                         maxLength="4" 
                         onChange={onFormChange}/>   
                 <span className="visa">
