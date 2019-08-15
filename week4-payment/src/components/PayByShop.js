@@ -1,14 +1,20 @@
 import React,{useState,useContext,useEffect} from "react"
 import {PaymentContext} from '../context'
 
-let PayByCredit = () =>{
+let PayByShop = () =>{
     let {paymentData,paymentDispatcher} = useContext(PaymentContext) 
-    let [shopData,setShopData] = useState(paymentData.data)
+    console.log('paymentData: ', paymentData);
+    let [shopData,setShopData] = useState(paymentData.formData)
     useEffect(()=>{
         console.log('useEffect',shopData)
     })
+    
+    let onFormChange = (e) => {
+        let name = e.target.name 
+        let value = e.target.value 
+        setShopData(prev=>{} )
+    }
 
-    let onFormChange = ()=>{}
     return (
         <>
             <div className="form-group mb-4">
@@ -24,10 +30,13 @@ let PayByCredit = () =>{
                     <div className="form-check">
                     <input className="form-check-input" 
                                type="radio" 
-                               name="exampleRadios" 
+                               name="bank" 
                                id="shop-family" 
-                               value="option1"/>
-                        <label className="form-check-label" for="shop-family">
+                            //    checked={shopData.name==='family'? true :''}
+                               onChange={onFormChange}
+                               value="family"/>
+
+                        <label className="form-check-label" htmlFor="shop-family">
                            全家
                         </label>
                     </div>
@@ -35,10 +44,13 @@ let PayByCredit = () =>{
                        
                         <input className="form-check-input" 
                                type="radio" 
-                               name="exampleRadios" 
+                               name="bank" 
                                id="shop-7-11" 
-                               value="option2"/>
-                        <label class="form-check-label" for="shop-7-11">
+                               
+                               onChange={onFormChange}
+                               value="7-11"/>
+
+                        <label className="form-check-label" htmlFor="shop-7-11">
                             7-11
                         </label>
                     </div>
@@ -54,4 +66,4 @@ let PayByCredit = () =>{
     )
 } 
 
-export default PayByCredit
+export default PayByShop

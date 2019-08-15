@@ -10,12 +10,13 @@ let PaymentCard = function({payment}){
             (()=>{
                 switch(payment){
                     case 'credit': 
-                        return   <PayByCredit/>
+                        return   <PayByCredit method={payment}/>
                     case 'shop': 
-                        return   <PayByShop/>
+                        return   <PayByShop method={payment}/>
                     case 'atm': 
-                        return   <PayByAtm/>
-
+                        return   <PayByAtm method={payment}/>
+                    default :
+                        return <h1> No Method Has Been Selected.</h1>
                 }
             })()
         }     

@@ -1,18 +1,22 @@
-import React,{useContext,useState,useEffect}  from "react"
+import React,{useContext,useState,useEffect,useCallback}  from "react"
 import {PaymentContext} from '../context'
-let PayByCredit = () =>{
-    let {paymentData,paymentDispatcher} = useContext(PaymentContext) 
-    let [creditData,setCreditData] = useState(paymentData.data)
+import { debounce } from '../utils/index'  
+let PayByCredit = ({method}) =>{
+    let { paymentData,paymentDispatcher} = useContext(PaymentContext) 
     
-    let  onFormChange   = (e)=>{
+    let setCreditData = debounce(useCallback(
+        (setterWithPrevState)=>{
+            let formData = setterWithPrevState(paymentData.formData) 
+            paymentDispatcher({method,formData})
+        },[method, paymentData, paymentDispatcher]),1000)
+
+    let  onFormChange = (e)=>{
         let value = e.target.value
-      
         let name = e.target.name
         setCreditData(prev=>{
              let inputName = name.split('-')[0]
              let inputIndex = name.split('-')[1]
-              
-              
+                
              if( Array.isArray(prev[inputName])   && inputIndex){
                  if((parseInt(inputIndex)+1)<=3 &&  value.length===4 ){
                      let nextCreditInput = document.querySelector(`input[name="${inputName+'-'+(parseInt(inputIndex)+1)}"]`)

@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Route path="/" exact component={PaymentSelect}/>
-      <Route path="/finish" exact component={PaymentFinish}/>
+      <Route path="/finish"  component={PaymentFinish}/>
     </BrowserRouter>
   );
 }

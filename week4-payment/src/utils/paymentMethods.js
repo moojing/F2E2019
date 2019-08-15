@@ -5,16 +5,30 @@ import imgATM from '../static/ATM-light.png'
 export let paymentMethods = [{
     name: 'credit', 
     texts:['信用卡','刷卡'],
-    img:imgCard
+    img:imgCard,
+    schema:{
+      email:'', 
+      creditNumber:['','','',''],
+      expireMonth:'',
+      expireYear:'',
+      cvv:''
+    }
   },
   {
     name:'shop',
     texts:['超商代碼','繳費'],
-    img:imgShop
+    img:imgShop,
+    schema:{
+      email:'', 
+      name:'family' , //family / 7-11
+    }
   },
   {
     name:'atm',
     texts:['ATM','轉帳'],
-    img:imgATM
-  
+    img:imgATM,
+    schema:{
+      email:'',
+      bank:'esun' // esun / twbank / twnew  
+    } 
   }]

@@ -14,24 +14,24 @@ let PayByAtm = () =>{
         <div className="form-group mb-4">
             <label> 選擇銀行 </label> 
             <div className="d-flex justify-content-between">
-                <div class="form-check">
-                <input class="form-check-input" 
+                <div className="form-check">
+                <input className="form-check-input" 
                            type="radio" 
                            name="exampleRadios" 
                            id="shop-family" 
                            value="option1"/>
-                    <label class="form-check-label" for="shop-family">
+                    <label className="form-check-label" htmlFor="shop-family">
                        全家
                     </label>
                 </div>
-                <div class="form-check">
+                <div className="form-check">
                    
-                    <input class="form-check-input" 
+                    <input className="form-check-input" 
                            type="radio" 
                            name="exampleRadios" 
                            id="shop-7-11" 
                            value="option2"/>
-                    <label class="form-check-label" for="shop-7-11">
+                    <label className="form-check-label" htmlFor="shop-7-11">
                         7-11
                     </label>
                 </div>

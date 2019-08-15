@@ -1,26 +1,35 @@
 import React,{useState,useReducer,useEffect} from 'react'
 import {PaymentFormReducer} from '../reducer' 
 import {PaymentContext} from '../context'
-import {defaultSchema} from '../utils/formSchema'
 import {paymentMethods as methods} from '../utils/paymentMethods'
 import PaymentCard from '../components/PaymentCard'
 
 let paymentFormInit = {
-  method: '', 
-  data:defaultSchema[methods[0].name]
+  method: methods[0].name, 
+  formData: methods[0].schema
 }
-
+ 
 function IndexPage() {
-  let [currentMethod,setCurrentMethod] = useState(methods[0].name)
+  let [currentMethod,setCurrentMethod] = useState(methods[0])
   let [paymentData, paymentDispatcher] = useReducer(PaymentFormReducer,paymentFormInit) 
   
+   
   useEffect(()=>{
-    paymentDispatcher({method:currentMethod})
+    paymentDispatcher({
+        method:currentMethod.name,
+        formData:currentMethod.schema
+      })
   },[currentMethod])
-
+  
   let onMethodClick = (method)=>{
-    setCurrentMethod(method)
+    let currentMethodEntity  =  methods.filter(target=>target.name===method)[0] 
+    setCurrentMethod(currentMethodEntity)    
   }
+  
+  let onPaymentSubmit = ()=>{
+   console.log('submit', paymentData)
+  } 
+
   return (
     <PaymentContext.Provider value={{
       paymentDispatcher,
@@ -38,7 +47,7 @@ function IndexPage() {
                     {
                       methods.map((method,index)=>{
                         return (
-                          <li className={`card card-method ${currentMethod===method.name ? 'active' : ''}` }
+                          <li className={`card card-method ${currentMethod.name===method.name ? 'active' : ''}` }
                               onClick={()=>{onMethodClick(method.name)}}
                               key={index}> 
                             <div className="card-img">
@@ -55,9 +64,11 @@ function IndexPage() {
                     }
                     </ul>
                     <div className="tab tab-method-page">
-                        <PaymentCard payment={currentMethod}/>
+                        <PaymentCard payment={currentMethod.name}/>
                     </div>  
-                    <div className="btn btn-teal btn-block py-3 mt-4"> 
+                    <div 
+                      onClick={onPaymentSubmit}
+                      className="btn btn-teal btn-block py-3 mt-4"> 
                       確定付款 ($1500)
                     </div>
                 </div>
