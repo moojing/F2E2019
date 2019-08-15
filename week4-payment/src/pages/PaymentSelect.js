@@ -3,6 +3,7 @@ import {PaymentFormReducer} from '../reducer'
 import {PaymentContext} from '../context'
 import {paymentMethods as methods} from '../utils/paymentMethods'
 import PaymentCard from '../components/PaymentCard'
+import {debounce} from '../utils/index'
 
 let paymentFormInit = {
   method: methods[0].name, 
@@ -12,7 +13,7 @@ let paymentFormInit = {
 function IndexPage() {
   let [currentMethod,setCurrentMethod] = useState(methods[0])
   let [paymentData, paymentDispatcher] = useReducer(PaymentFormReducer,paymentFormInit) 
-  
+  paymentDispatcher = debounce(paymentDispatcher,800)
    
   useEffect(()=>{
     paymentDispatcher({

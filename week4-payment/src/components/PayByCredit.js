@@ -1,14 +1,14 @@
 import React,{useContext,useState,useEffect,useCallback}  from "react"
 import {PaymentContext} from '../context'
-import { debounce } from '../utils/index'  
+  
 let PayByCredit = ({method}) =>{
     let { paymentData,paymentDispatcher} = useContext(PaymentContext) 
     
-    let setCreditData = debounce(useCallback(
+    let setCreditData = useCallback(
         (setterWithPrevState)=>{
             let formData = setterWithPrevState(paymentData.formData) 
             paymentDispatcher({method,formData})
-        },[method, paymentData, paymentDispatcher]),1000)
+        },[method, paymentData, paymentDispatcher])
 
     let  onFormChange = (e)=>{
         let value = e.target.value
