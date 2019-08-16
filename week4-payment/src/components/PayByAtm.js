@@ -1,7 +1,19 @@
-import React from "react"
+import React ,{useContext} from "react"
+import {PaymentContext} from '../context'
 
-let PayByAtm = () =>{
-    let onFormChange = ()=>{} 
+let PayByAtm = ({method}) =>{
+    let {paymentData,paymentDispatcher} = useContext(PaymentContext) 
+    let setAtmData = (atmSetter)=>{
+        let latestData = atmSetter(paymentData.formData) 
+        paymentDispatcher({method,formData:latestData}) 
+    }
+    let onFormChange = (e) => {
+        let name = e.target.name 
+        let value = e.target.value 
+        setAtmData(prev=>{ 
+             return {...prev,[name]:value}   
+        })
+    }
     return (
         <>
         <div className="form-group mb-4">
@@ -16,23 +28,37 @@ let PayByAtm = () =>{
             <div className="d-flex justify-content-between">
                 <div className="form-check">
                 <input className="form-check-input" 
+                            onChange={onFormChange}
                            type="radio" 
-                           name="exampleRadios" 
-                           id="shop-family" 
-                           value="option1"/>
-                    <label className="form-check-label" htmlFor="shop-family">
-                       全家
+                           name="bankName" 
+                           id="bank-esun" 
+                           value="esun"/>
+                    <label className="form-check-label" htmlFor="bank-esun">
+                       玉山銀行
                     </label>
                 </div>
                 <div className="form-check">
                    
                     <input className="form-check-input" 
+                            onChange={onFormChange}
                            type="radio" 
-                           name="exampleRadios" 
-                           id="shop-7-11" 
-                           value="option2"/>
-                    <label className="form-check-label" htmlFor="shop-7-11">
-                        7-11
+                           name="bankName" 
+                           id="bank-twbank" 
+                           value="twbank"/>
+                    <label className="form-check-label" htmlFor="bank-twbank">
+                        台灣銀行 
+                    </label>
+                </div>
+                <div className="form-check">
+                   
+                    <input className="form-check-input" 
+                            onChange={onFormChange}
+                           type="radio" 
+                           name="bankName" 
+                           id="bank-twnew" 
+                           value="twnew"/>
+                    <label className="form-check-label" htmlFor="bank-twnew">
+                        台新銀行
                     </label>
                 </div>
             </div>

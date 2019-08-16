@@ -20,7 +20,7 @@ export let paymentMethods = [{
     img:imgShop,
     schema:{
       email:'', 
-      name:'family' , //family / 7-11
+      shopName:'family' , //family / 7-11
     }
   },
   {
@@ -29,6 +29,6 @@ export let paymentMethods = [{
     img:imgATM,
     schema:{
       email:'',
-      bank:'esun' // esun / twbank / twnew  
+      bankName:'esun' // esun / twbank / twnew  
     } 
   }]

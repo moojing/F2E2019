@@ -1,18 +1,20 @@
 import React,{useState,useContext,useEffect} from "react"
 import {PaymentContext} from '../context'
 
-let PayByShop = () =>{
+let PayByShop = ({method}) =>{
     let {paymentData,paymentDispatcher} = useContext(PaymentContext) 
-    console.log('paymentData: ', paymentData);
-    let [shopData,setShopData] = useState(paymentData.formData)
-    useEffect(()=>{
-        console.log('useEffect',shopData)
-    })
     
+    let setShopData = (shopSetter)=>{
+        let latestData = shopSetter(paymentData.formData) 
+        paymentDispatcher({method,formData:latestData}) 
+    }
     let onFormChange = (e) => {
         let name = e.target.name 
         let value = e.target.value 
-        setShopData(prev=>{} )
+        setShopData(prev=>{ 
+             
+             return {...prev,[name]:value}   
+        })
     }
 
     return (
@@ -30,7 +32,7 @@ let PayByShop = () =>{
                     <div className="form-check">
                     <input className="form-check-input" 
                                type="radio" 
-                               name="bank" 
+                               name="shopName" 
                                id="shop-family" 
                             //    checked={shopData.name==='family'? true :''}
                                onChange={onFormChange}
@@ -44,7 +46,7 @@ let PayByShop = () =>{
                        
                         <input className="form-check-input" 
                                type="radio" 
-                               name="bank" 
+                               name="shopName" 
                                id="shop-7-11" 
                                
                                onChange={onFormChange}
