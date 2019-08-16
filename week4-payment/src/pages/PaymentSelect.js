@@ -1,41 +1,33 @@
-import React,{useState,useReducer,useEffect} from 'react'
-import {PaymentFormReducer} from '../reducer' 
+import React,{useState,useReducer,useContext,useEffect} from 'react'
+
 import {PaymentContext} from '../context'
 import {paymentMethods as methods} from '../utils/paymentMethods'
 import PaymentCard from '../components/PaymentCard'
-import {debounce} from '../utils/index'
 
-let paymentFormInit = {
-  method: methods[0].name, 
-  formData: methods[0].schema
-}
+import { withRouter,Link } from 'react-router-dom';
+
  
-function IndexPage() {
+function IndexPage({history}) {
   let [currentMethod,setCurrentMethod] = useState(methods[0])
-  let [paymentData, paymentDispatcher] = useReducer(PaymentFormReducer,paymentFormInit) 
-  paymentDispatcher = debounce(paymentDispatcher,800)
+  let {paymentData,paymentDispatcher} = useContext(PaymentContext)
    
   useEffect(()=>{
     paymentDispatcher({
         method:currentMethod.name,
         formData:currentMethod.schema
       })
-  },[currentMethod])
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[currentMethod ])
   
   let onMethodClick = (method)=>{
     let currentMethodEntity  =  methods.filter(target=>target.name===method)[0] 
     setCurrentMethod(currentMethodEntity)    
   }
   
-  let onPaymentSubmit = ()=>{
-   console.log('submit', paymentData)
-  } 
 
   return (
-    <PaymentContext.Provider value={{
-      paymentDispatcher,
-      paymentData
-      }}>
+    
+     
       <div className="container"> 
         <div className="row m-5"> 
           <div className="col-8"> 
@@ -67,11 +59,13 @@ function IndexPage() {
                     <div className="tab tab-method-page">
                         <PaymentCard payment={currentMethod.name}/>
                     </div>  
-                    <div 
-                      onClick={onPaymentSubmit}
+                    <Link 
+                      to='/finish'
+                      // onClick={onPaymentSubmit}
                       className="btn btn-teal btn-block py-3 mt-4"> 
                       確定付款 ($1500)
-                    </div>
+                    </Link>
+                    
                 </div>
               
             </div>
@@ -109,8 +103,8 @@ function IndexPage() {
           </div>
         </div>
       </div>
-      </PaymentContext.Provider>
+      
   );
 }
  
-export default IndexPage;
+export default withRouter(IndexPage);
