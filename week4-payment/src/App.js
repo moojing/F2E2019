@@ -1,4 +1,4 @@
-import React,{useState,useReducer,useEffect} from 'react'
+import React,{useReducer} from 'react'
 import { BrowserRouter , Route } from "react-router-dom";
 import PaymentSelect from './pages/PaymentSelect' 
 import PaymentFinish from './pages/PaymentFinish' 

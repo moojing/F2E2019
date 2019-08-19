@@ -1,0 +1,51 @@
+.active  .frame {
+    
+    display: block; 
+    width: 8px; 
+    height: 8px; 
+    margin:3px;
+    background-color: transparent;
+    position: absolute;
+    animation: shine 0.1s infinite  ;
+    animation-iteration-count: 3;
+}
+@keyframes shine {
+    0%{
+        opacity: 0;
+    } 
+    50%{
+        opacity: 1;
+    } 
+    100%{
+        opacity: 0;
+    }
+}
+.active .frame{
+    &-left-top{
+            left: 0;
+            top:0;
+            border-top: 2px solid $teal-light;
+            border-left: 2px solid $teal-light;
+         
+    }
+    &-right-top{
+        
+            right: 0;
+            top:0;
+            border-top: 2px solid $teal-light;
+            border-right: 2px solid $teal-light;
+         
+    }
+    &-right-bottom{
+        right: 0;
+        bottom:0;
+        border-bottom: 2px solid $teal-light;
+        border-right: 2px solid $teal-light;
+    }
+    &-left-bottom{
+        left: 0;
+        bottom:0;
+        border-bottom: 2px solid $teal-light;
+        border-left: 2px solid $teal-light;
+    }
+}

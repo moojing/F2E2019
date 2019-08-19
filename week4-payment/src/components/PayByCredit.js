@@ -1,4 +1,4 @@
-import React,{useContext,useState,useEffect,useCallback}  from "react"
+import React,{useContext,useCallback}  from "react"
 import {PaymentContext} from '../context'
   
 let PayByCredit = ({method}) =>{

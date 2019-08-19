@@ -1,4 +1,4 @@
-import React,{useState,useReducer,useContext,useEffect} from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 
 import {PaymentContext} from '../context'
 import {paymentMethods as methods} from '../utils/paymentMethods'
@@ -51,6 +51,10 @@ function IndexPage({history}) {
                                 method.texts.map((text,index)=>(<h6 key={index}>{text}</h6>)) 
                               }
                             </div>
+                            <div className="frame frame-left-top"> </div>
+                            <div className="frame frame-right-top"> </div>
+                            <div className="frame frame-right-bottom"> </div>
+                            <div className="frame frame-left-bottom"> </div>
                         </li>
                         ) 
                       }) 
