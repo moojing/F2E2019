@@ -23,6 +23,10 @@
             opacity: .2;
         } 
     }
+    &-subtitle{
+        font-size: 16px;
+        text-align: center;  
+    } 
     &-body{
         display: flex;
         flex-direction: column;
@@ -54,13 +58,55 @@
 }
 
 .price{
-    color:$teal-light;
-    &-single{
-        
-    }
+    
     &-total{
         font-size: 1.4rem;
+    }
+    &-title{
+        display: inline-block;
+        min-width: 10rem;
     }
     
 }
 
+.wrapper-finish {
+    padding: 0 5rem;
+    padding-top:1rem ;
+    padding-bottom:5rem ;
+   
+    .wrapper-title{
+        margin-bottom: 0px;
+        &:after { display: none;}   
+    }
+    .wrapper-subtitle{
+        margin-bottom: 2rem;
+     }
+     .wrapper-body{
+        border: 1px solid $teal;
+         padding: 3rem 3rem; 
+         position: relative;
+         &:after{
+             content: "付款明細"; 
+             display: inline-block; 
+             position: absolute; 
+             text-align: center; 
+             top: 0; 
+             left: 50%; 
+             transform:translate(-50%,-50%);
+             background-color: #1A2328;
+             min-width: 130px; 
+             border:1px solid $teal; 
+             padding: 0.2rem 1rem; 
+         } 
+     } 
+    .wrapper-footer{
+        margin-left:10%;
+        width: 80%;
+        border: 1px solid $teal;
+        position: relative; 
+        min-height: 50px;
+        
+    }
+    
+    
+} 

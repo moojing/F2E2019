@@ -1,0 +1,32 @@
+.btn-order{
+    border: solid 1px  $teal-light;
+    background-color: #1A2328;
+    padding: 10px; 
+    color: white;
+    border-radius: 0px;
+    position: relative;
+    
+    cursor: pointer; 
+    &:hover{
+        color:white;
+    } 
+    &:after{
+        content:""; 
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        border: solid 1px   $teal-light;
+        padding: 10px; 
+        position: absolute; 
+        left: 5px;
+        top: 5px;
+    } 
+}
+
+.btn-order-group{
+    position: absolute; 
+    top: 50%;
+    width: 100%; 
+    display: flex; 
+    justify-content: space-around;
+} 

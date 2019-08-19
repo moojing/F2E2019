@@ -83,19 +83,19 @@ function IndexPage({history}) {
                 <ul className="wrapper-body flex-column">
                   <li> 
                      流浪金屬史萊姆鎧甲 x 1 
-                    <span className="price price-single">1150</span>
+                    <span className="price price-single text-teal-light">1150</span>
                   </li>
                   <li>
                       抗魔戒指 x 1
-                      <span className="price price-single">100</span>
+                      <span className="price price-single text-teal-light">100</span>
                   </li>
                   <li>
                       萬能藥 x 3  
-                      <span className="price price-single">270</span>
+                      <span className="price price-single text-teal-light">270</span>
                   </li>
                   <li>
                       賢者藥水 x 1 
-                      <span className="price price-single">130</span>
+                      <span className="price price-single text-teal-light">130</span>
                   </li>
 
                 </ul>
