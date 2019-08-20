@@ -16,15 +16,15 @@ let paymentFormInit = {
 function App() {
   let [paymentData, paymentDispatcher] = useReducer(PaymentFormReducer,paymentFormInit) 
   paymentDispatcher = debounce(paymentDispatcher,800)
-  
+  console.log('App')
   return (
     <BrowserRouter>
     <PaymentContext.Provider value={{
        paymentDispatcher,
        paymentData
        }}>
-      <Route path="/" exact component={PaymentSelect}/>
-      <Route path="/finish"  component={PaymentFinish}/>
+      <Route path={`${process.env.REACT_APP_ROUTE_PREFIX}/`} exact component={PaymentSelect}/>
+      <Route path={`${process.env.REACT_APP_ROUTE_PREFIX}/finish`}  component={PaymentFinish}/>
       </PaymentContext.Provider>
     </BrowserRouter>
   );

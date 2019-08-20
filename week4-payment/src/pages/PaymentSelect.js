@@ -7,7 +7,7 @@ import PaymentCard from '../components/PaymentCard'
 import { withRouter,Link } from 'react-router-dom';
 
  
-function IndexPage({history}) {
+function IndexPage({match}) {
   let [currentMethod,setCurrentMethod] = useState(methods[0])
   let {paymentData,paymentDispatcher} = useContext(PaymentContext)
    
@@ -64,7 +64,7 @@ function IndexPage({history}) {
                         <PaymentCard payment={currentMethod.name}/>
                     </div>  
                     <Link 
-                      to='/finish'
+                      to={`${process.env.REACT_APP_ROUTE_PREFIX}/finish`}
                       // onClick={onPaymentSubmit}
                       className="btn btn-teal btn-block py-3 mt-4"> 
                       確定付款 ($1500)
