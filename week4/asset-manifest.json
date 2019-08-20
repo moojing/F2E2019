@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/F2E2019/week4/static/css/main.966134c4.chunk.css",
-    "main.js": "/F2E2019/week4/static/js/main.494624f2.chunk.js",
-    "main.js.map": "/F2E2019/week4/static/js/main.494624f2.chunk.js.map",
+    "main.css": "/F2E2019/week4/static/css/main.165bab1b.chunk.css",
+    "main.js": "/F2E2019/week4/static/js/main.4ad76ec1.chunk.js",
+    "main.js.map": "/F2E2019/week4/static/js/main.4ad76ec1.chunk.js.map",
     "runtime~main.js": "/F2E2019/week4/static/js/runtime~main.883cc112.js",
     "runtime~main.js.map": "/F2E2019/week4/static/js/runtime~main.883cc112.js.map",
-    "static/js/2.254151f8.chunk.js": "/F2E2019/week4/static/js/2.254151f8.chunk.js",
-    "static/js/2.254151f8.chunk.js.map": "/F2E2019/week4/static/js/2.254151f8.chunk.js.map",
+    "static/js/2.b93db73f.chunk.js": "/F2E2019/week4/static/js/2.b93db73f.chunk.js",
+    "static/js/2.b93db73f.chunk.js.map": "/F2E2019/week4/static/js/2.b93db73f.chunk.js.map",
     "index.html": "/F2E2019/week4/index.html",
-    "precache-manifest.7da1bd6de886bb1e15687f54206a6c57.js": "/F2E2019/week4/precache-manifest.7da1bd6de886bb1e15687f54206a6c57.js",
+    "precache-manifest.fa2d0e3ec480064a20d793c70d56437d.js": "/F2E2019/week4/precache-manifest.fa2d0e3ec480064a20d793c70d56437d.js",
     "service-worker.js": "/F2E2019/week4/service-worker.js",
-    "static/css/main.966134c4.chunk.css.map": "/F2E2019/week4/static/css/main.966134c4.chunk.css.map",
+    "static/css/main.165bab1b.chunk.css.map": "/F2E2019/week4/static/css/main.165bab1b.chunk.css.map",
     "static/media/ATM-light.png": "/F2E2019/week4/static/media/ATM-light.b6736345.png",
     "static/media/card-light.png": "/F2E2019/week4/static/media/card-light.c4ed4c04.png",
     "static/media/shop-light.png": "/F2E2019/week4/static/media/shop-light.56e31c57.png"
