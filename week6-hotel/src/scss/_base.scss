@@ -1,13 +1,23 @@
 html{
-    font: Bold Italic 48px/48px Helvetica Neue;
+    font-family: Bold Italic  Helvetica Neue;
+    *{
+        box-sizing: border-box;
+    }
 }
 
 
 
 .header{
-    height:2rem;
+    margin: 64px 85px ; //85px
+    margin-right:275px;
+    min-height:352px;
+    position: relative;
     background-image:url(https://images.unsplash.com/photo-1523594572281-3c9a566b6163?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80);
     h1{
         font-size: 48px;
+        writing-mode: vertical-lr;
+        background-color: #fff;
+        letter-spacing: 1px;
+        font-style: italic; 
     }
 } 
