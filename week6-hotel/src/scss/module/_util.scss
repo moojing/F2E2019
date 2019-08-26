@@ -3,3 +3,14 @@
     left: 32px;
     
 }
+
+.icon-arror-down{
+    
+    width: 1rem;
+    transform-origin: center ;
+    @include abs-vertical-center{
+        transform: rotate(90deg) translateX(-80%);
+    }
+    right: 32px;
+    
+} 

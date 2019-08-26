@@ -11,11 +11,13 @@
     @include position-abs;
     top:50%;
     transform: translateY(-50%);
+    @content;
 }
 @mixin abs-horizontal-center{
     @include position-abs;
     left:50%;
     transform: translateX(-50%);
+    @content;
 }
 
 @mixin abs-center{

@@ -1,5 +1,6 @@
 html{
     font-family: Bold Italic  Helvetica Neue;
+    -webkit-font-smoothing: antialiased;
     *{
         box-sizing: border-box;
     }
@@ -14,10 +15,17 @@ html{
     position: relative;
     background-image:url(https://images.unsplash.com/photo-1523594572281-3c9a566b6163?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80);
     h1{
+        
         font-size: 48px;
+        font-weight: 700;
+        font-style: italic; 
+        font-family: Open Sans,sans-serif;
         writing-mode: vertical-lr;
+        text-align: center;
         background-color: #fff;
         letter-spacing: 1px;
-        font-style: italic; 
+        line-height: 1.2;
+        color:$color-black ;
+        
     }
 } 
