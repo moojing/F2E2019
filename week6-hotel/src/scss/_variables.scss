@@ -1,2 +1,13 @@
 $color-primary:#569DC3;
 $color-black: #2d3643 ;
+$color-gray:#748290;
+
+$themes:(
+    'primary': #569DC3, 
+    'black':#2d3643,
+    'gray':#748290
+);
+
+// @each $key ,$value  in $themes{
+     
+// }  

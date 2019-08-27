@@ -5,11 +5,26 @@ html{
         box-sizing: border-box;
     }
 }
-
-
+.container{
+    // padding:85px; 
+    margin: 0 auto; 
+    max-width: 960px;
+}
+h1,h2,h3,h4,h5{
+    letter-spacing: 1.2px;
+}
+h1{
+    font-size: 48px;
+} 
+h2{
+    font-size: 36px;
+} 
+// p{
+//     font-size: 16px;
+// }
 
 .header{
-    margin: 64px 85px ; //85px
+    margin: 64px 0 ; //85px
     margin-right:275px;
     min-height:352px;
     position: relative;
