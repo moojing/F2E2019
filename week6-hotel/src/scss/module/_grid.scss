@@ -2,6 +2,53 @@
 .box{
     height: 300px; 
     background-color: map-get($themes,'gray');
+    
+}
+
+body{
+    padding: 0; 
+    margin: 0; 
+} 
+
+.container{
+    margin: 0 auto; 
+    max-width:1040px;
+    padding-left: ($gutter-width / 2);
+    padding-right: ($gutter-width / 2);
   
+}
+
+.row{
+    display: flex;
+    margin-left: -($gutter-width / 2);
+    margin-right: -($gutter-width / 2);
+    flex-wrap: wrap;
+    padding-top: 1rem; 
+    padding-bottom: 1rem; 
+}
+ 
+%col {
+    position: relative; 
+    min-height: 1px; 
+    max-width: 100%;
+    padding-left:($gutter-width / 2);
+    padding-right:($gutter-width / 2);
+    flex:0 0 100%;
+}
+
+@for $i from 1 through $grid-mum{
+    .col-#{$i}{
+        @extend %col ;
+    }
+}
+
+@media (min-width: 767px){
+    @for $i from 1 through $grid-mum{
+        .col-#{$i}{
+            width: 100% * ($i / $grid-mum)  ;
+            flex:0 0  100% * ($i / $grid-mum) ;
+        
+        }
+    }
     
 }

@@ -13,12 +13,8 @@ function App() {
       <div className="container"> 
           <Recommand/> 
       </div>
-      <div className="container"> 
-          <div className="box"></div>
-      </div>
-      <div className="container"> 
-          <div className="box"></div>
-      </div>  
+      
+       
       
     </div>
   );

@@ -1,15 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+
 html{
     font-family: Bold Italic  Helvetica Neue;
     -webkit-font-smoothing: antialiased;
-    *{
-        box-sizing: border-box;
-    }
+   
 }
-.container{
-    // padding:85px; 
-    margin: 0 auto; 
-    max-width: 960px;
-}
+
 h1,h2,h3,h4,h5{
     letter-spacing: 1.2px;
 }
